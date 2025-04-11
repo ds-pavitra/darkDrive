@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DarkDrive Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dashboard-body">
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar d-flex flex-column align-items-start p-3">
+      <div class="w-100">
+        <div class="d-flex align-items-center mb-4 justify-content-evenly w-100">
+          <button class="menu-toggle"><img src="img/hamburger.svg" alt="hamburger"></button>
+          <img class="logo" src="./img/protexcoLogo.png" alt="DarkDive Logo">
+        </div>
+        <div class="stroke"></div>
+        <nav class="nav flex-column w-100">
+          <a class="nav-link active" href="#"><img src="img/dasboardIconBlue.svg" class="me-2"
+              id="dashboard">Dashboard</a>
+          <a class="nav-link" href="#"><img src="img/brandIdentityicon.svg" class="me-2" id="Brand">Brand Identity</a>
+          <a class="nav-link" href="#"><img src="img/leaksicon.svg" class="me-2" id="Leaks">Leaks</a>
+          <a class="nav-link" href="#"><img src="img/alertsicon.svg" class="me-2" id="Alerts">Alerts</a>
+          <a class="nav-link" href="#"><img src="img/customerIcon.svg" class="me-2" id="Customers">Customers</a>
+          <a class="nav-link" href="#"><img src="img/activitylogsIcon.svg" class="me-2" id="Activity">Activity Logs</a>
+          <a class="nav-link" href="#"><img src="img/settingIcon.svg" class="me-2" id="Setting">Setting</a>
+        </nav>
+      </div>
+      <div class="text-muted small mt-auto">© 2025</div>
+    </div>
+
+
+    <!-- Main -->
+    <div class="flex-grow-1 main-content">
+      <!-- Header -->
+      <div class="topbar d-flex justify-content-between align-items-center px-4 pb-2">
+        <h4 class="m-0">Dashboard</h4>
+        <div class="d-flex align-items-center gap-3">
+
+          <!-- Search Input with Icon -->
+          <div class="search-wrapper position-relative">
+            <input class="search-input ps-5" type="text" placeholder="Search here...">
+            <img src="img/searchicon.png" class="search-icon position-absolute" alt="Search">
+          </div>
+
+          <!-- Sign In with Icon -->
+          <a href="#" class="text-decoration-none d-flex align-items-center gap-2" style="color: #718096;">
+            <img src="img/signinicon.png" class="sign-icon" alt="Sign In Icon">
+            Sign In
+          </a>
+        </div>
+      </div>
+
+
+      <!-- Content -->
+      <div class="container-fluid py-4">
+        <!-- Stats Cards -->
+        <div class="row g-3 mb-4">
+          <div class="col-md-3">
+            <div class="card-custom">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h6>Total Domain</h6>
+                  <h4>270 <span class="text-success">+55%</span></h4>
+                </div>
+                <div><img src="img/domainsIcon.png" class="cardIcons"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card-custom">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h6>Total Leaks</h6>
+                  <h4>3,298 <span class="text-danger">-14%</span></h4>
+                </div>
+                <div><img src="img/totalLeaksIcon.png" class="cardIcons" alt=""></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card-custom">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h6>Total User</h6>
+                  <h4>100 <span class="text-success">+55%</span></h4>
+                </div>
+                <div><img src="img/userIcon.png" class="cardIcons" alt=""></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card-custom">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h6>Leaks Data</h6>
+                  <h4>100 TB <span class="text-success">+55%</span></h4>
+                </div>
+                <div><img src="img/DataIcon.png" class="cardIcons" alt=""></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="row g-3">
+          <div class="col-md-8">
+            <div class="chart-container">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h6>Domains</h6>
+                <div class="duration-filters">
+                  <button class="duration-btn active">12 months</button>
+                  <span>|</span>
+                  <button class="duration-btn">6 months</button>
+                  <span>|</span>
+                  <button class="duration-btn">30 days</button>
+                  <span>|</span>
+                  <button class="duration-btn">7 days</button>
+                </div>
+              </div>
+              <canvas id="domainChart"></canvas>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="chart-container">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h6>Income Breakdown</h6>
+                <button class="incomeChartBtn d-flex align-items-center"> <img src="img/calendar image.png" class="me-2" alt="date slect"> Last 7 days</button>
+              </div>
+              <canvas id="incomeChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const domainChart = new Chart(document.getElementById('domainChart'), {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [
+          {
+            label: 'Domain A',
+            data: [10000, 15000, 8000, 20000, 30000, 40000, 105256, 30000, 20000, 35000, 50000, 70000],
+            fill: true,
+            backgroundColor: '#19abee94',
+            borderColor: '#19ABEE',
+            tension: 0.4,
+            pointRadius: 0
+          },
+          {
+            label: 'Domain B',
+            data: [120000, 100000, 12000, 40000, 25000, 30000, 50000, 40000, 15000, 20000, 30000, 40000],
+            fill: true,
+            backgroundColor: '#7693a082',
+            borderColor: '#7693A0',
+            tension: 0.4,
+            pointRadius: 0
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            // labels: {
+            //   color: 'white'
+            // }
+            display: false
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: 'white' },
+            grid: { color: 'transparent' }
+          },
+          y: {
+            ticks: { color: 'white' },
+            grid: {
+              color: '#56577A',
+              borderDash: [5, 5]
+            }
+          }
+        }
+      }
+    });
+
+    const ctx = document.getElementById('incomeChart').getContext('2d');
+
+    // Create gradients
+    const gradient1 = ctx.createLinearGradient(0, 0, 0, 200);
+    gradient1.addColorStop(0, '#19ABEE'); // gold
+    gradient1.addColorStop(1, '#377896'); // orange
+
+    const gradient2 = ctx.createLinearGradient(0, 0, 0, 200);
+    gradient2.addColorStop(0, '#B9E9FF');
+    gradient2.addColorStop(1, '#5D91A9');
+
+    const gradient3 = ctx.createLinearGradient(0, 0, 0, 200);
+    gradient3.addColorStop(0, '#D3F1FF');
+    gradient3.addColorStop(1, '#5E7883');
+
+    const incomeChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Domain', 'Leaks', 'Alerts'],
+        datasets: [{
+          data: [55356, 23000, 12000],
+          backgroundColor: [gradient1, gradient2, gradient3],
+          borderWidth: 0,
+        }]
+      },
+      options: {
+        plugins: {
+          legend: {
+            display: true,
+            position: 'bottom',
+            labels: {
+              color: 'white',
+              usePointStyle: true,
+              pointStyle: 'circle',
+              padding: 20
+            }
+          }
+        }
+      }
+    });
+
+
+  </script>
+
+</body>
+
+</html>

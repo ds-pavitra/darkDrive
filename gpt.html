@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Protecxo Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./css/style.css"/>
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="menu-icon">☰</span>
+        <div>
+          <h2>PROTEC<span class="gold">XO</span></h2>
+          <p class="subtitle">Defenders of the Digital Frontier</p>
+        </div>
+      </div>
+      <nav>
+        <a class="active" href="#">📊 Dashboard</a>
+        <a href="#">🎨 Brand Identity</a>
+        <a href="#">🧱 Leaks</a>
+        <a href="#">🚨 Alerts</a>
+        <a href="#">👥 Customers</a>
+        <a href="#">🕒 Activity Logs</a>
+        <a href="#">⚙️ Setting</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+      <header>
+        <h1>Dashboard</h1>
+        <div class="search-login">
+          <input type="text" placeholder="Search here..." />
+          <a href="#">🔒 Sign In</a>
+        </div>
+      </header>
+
+      <section class="cards">
+        <div class="card">
+          <div>
+            <h3>Total Domain</h3>
+            <p>270 <span class="green">+55%</span></p>
+          </div>
+          <span class="icon">🌐</span>
+        </div>
+        <div class="card">
+          <div>
+            <h3>Total Leaks</h3>
+            <p>3,298 <span class="red">-14%</span></p>
+          </div>
+          <span class="icon">#️⃣</span>
+        </div>
+        <div class="card">
+          <div>
+            <h3>Total User</h3>
+            <p>100 <span class="green">+55%</span></p>
+          </div>
+          <span class="icon">👤</span>
+        </div>
+        <div class="card">
+          <div>
+            <h3>Leaks Data</h3>
+            <p>100 TB <span class="green">+55%</span></p>
+          </div>
+          <span class="icon">💽</span>
+        </div>
+      </section>
+
+      <section class="charts">
+        <div class="line-chart">
+          <div class="chart-header">
+            <h3>Domains</h3>
+            <div class="tabs">
+              <button class="active">12 months</button>
+              <button>6 months</button>
+              <button>30 days</button>
+              <button>7 days</button>
+            </div>
+          </div>
+          <canvas id="domainChart"></canvas>
+        </div>
+
+        <div class="donut-chart">
+          <div class="chart-header">
+            <h3>Income Breakdown</h3>
+            <button>Last 7 days</button>
+          </div>
+          <canvas id="incomeChart"></canvas>
+          <div class="legend">
+            <span><span class="dot domain"></span>Domain</span>
+            <span><span class="dot leaks"></span>Leaks</span>
+            <span><span class="dot alerts"></span>Alerts</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css"/>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-wrapper">
+            <div class="left-panel">
+                <div class="logo"><img src="./img/protexcoLogo.png" alt="protexcoLogo"></div>
+                <!-- <div class="tagline">DEFENDERS OF THE DIGITAL FRONTIER</div> -->
+                <h1>Welcome Back!</h1>
+                <p>We are very happy to see you back!</p>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="abcd@gmail.com">
+                    </div>
+                    <div class="form-group password-wrapper">
+                        <label for="password">Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" placeholder="Password">
+                            <span class="toggle-password" id="togglePassword">
+                                <i class="fa-solid fa-eye-slash"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <br><br>
+                    <button class="btn-login">Login</button>
+                    <div class="signup">
+                        Don’t have Account?<a href="#">Sign Up</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="right-panel">
+            <!-- <img src="/mnt/data/image.png" alt="Login Security Shield" /> -->
+        </div>
+    </div>
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+
+        togglePassword.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+
+            togglePassword.innerHTML = isPassword
+                ? '<i class="fa-solid fa-eye"></i>'
+                : '<i class="fa-solid fa-eye-slash"></i>';
+        });
+    </script>
+
+</body>
+
+</html>

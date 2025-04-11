@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css" />
+  
+</head>
+
+<body>
+  <div class="container">
+    <div class="left-wrapper">
+      <div class="left-panel">
+        <div class="logo">
+          <img src="./img/protexcoLogo.png" alt="protexcoLogo">
+        </div>
+        <div class="tagline">DEFENDERS OF THE DIGITAL FRONTIER</div>
+        <h1 class="signupH1">Get Started</h1>
+
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Johny Roy" />
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" placeholder="Enter company name here (Optional)" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="abcd@gmail.com" />
+          </div>
+
+          <div class="form-group password-wrapper">
+            <label for="password">Password</label>
+            <div class="password-wrapper">
+              <input type="password" id="password" placeholder="••••••••••" />
+              <span class="toggle-password" id="togglePassword">
+                <i class="fa-solid fa-eye-slash"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="terms" />
+            <label for="terms" class="checkbox-text">
+              By clicking on 'Check box', you're agreeing to the Protexco<br> Terms of Service and Privacy Policy
+            </label>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="newsletter" checked />
+            <label for="newsletter" class="checkbox-text">Sign up for Newsletter</label>
+          </div>
+
+          <button type="submit" class="btn-signup">Sign Up</button>
+
+          <div class="login-link">
+            Already have an account? <a href="#"> Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="right-panel">
+      <!-- Future image or design -->
+    </div>
+  </div>
+
+  <script>
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+
+    togglePassword.addEventListener('click', () => {
+      const isPassword = passwordInput.type === 'password';
+      passwordInput.type = isPassword ? 'text' : 'password';
+
+      togglePassword.innerHTML = isPassword
+        ? '<i class="fa-solid fa-eye"></i>'
+        : '<i class="fa-solid fa-eye-slash"></i>';
+    });
+  </script>
+</body>
+
+</html>

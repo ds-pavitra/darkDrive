@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        .card-glass {
+            width: 100%;
+            max-width: 400px;
+            padding: 40px 30px;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            /* glass effect */
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .card-glass h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .card-glass p.subtext {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .card-glass .form-group {
+            margin-bottom: 20px;
+        }
+
+        .card-glass label {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .card-glass input {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .card-glass input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .card-glass .toggle-password {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .card-glass .btn-login {
+            width: 100%;
+            background: linear-gradient(135deg, #0d6efd, #38b6ff);
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .card-glass .btn-login:hover {
+            background: linear-gradient(135deg, #187bfd, #53c9ff);
+        }
+
+        .card-glass .link {
+            display: block;
+            text-align: right;
+            font-size: 13px;
+            color: #3bb9ff;
+            margin-top: 6px;
+            text-decoration: none;
+        }
+
+        .card-glass .link:hover {
+            text-decoration: underline;
+        }
+
+        .card-glass .signup {
+            margin-top: 20px;
+            font-size: 13px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .card-glass .signup a {
+            color: #3bb9ff;
+            text-decoration: none;
+        }
+
+        .card-glass .signup a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-glass">
+        <h2>Welcome Back!</h2>
+        <p class="subtext">We are very happy to see you back!</p>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="abcd@gmail.com">
+        </div>
+        <div class="form-group" style="position: relative;">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Password">
+            <span class="toggle-password" onclick="togglePassword('password')">
+                <i class="fa-solid fa-eye-slash"></i>
+            </span>
+        </div>
+        <a href="#" class="link">Forgot Password?</a>
+        <button class="btn-login">Login</button>
+        <div class="signup">Don’t have Account? <a href="#">Sign Up</a></div>
+    </div>
+
+</body>
+
+</html>
