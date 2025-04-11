@@ -556,7 +556,10 @@ input::placeholder {
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
+  /* height: 100vh; */
 }
+
+
 
 /* .sidebar {
   height: 100vh;
@@ -651,7 +654,7 @@ input::placeholder {
   -webkit-backdrop-filter: blur(5px) saturate(180%);
   border-radius: 12px;
   border: 1px solid #2A5061;
-  height: 500px;
+  /* min-height: 500px; */
 }
 
 .cardIcons{
@@ -875,4 +878,12 @@ input::placeholder {
 
 .incomeChartBtn:hover{
   color: #fff;
+}
+
+
+@media screen and (min-width: 1366px) {
+  /* Your styles for screens larger than 1440px */
+  .dashboard-body , .dashboard-container{
+    height: auto;
+  }
 }
