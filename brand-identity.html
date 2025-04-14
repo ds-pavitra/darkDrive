@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DarkDrive Brand Identity</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dashboard-body">
+  <div class="d-flex dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar d-flex flex-column align-items-start p-3">
+      <div class="w-100">
+        <div class="d-flex align-items-center mb-4 justify-content-evenly w-100">
+          <button class="menu-toggle"><img src="img/hamburger.svg" alt="hamburger"></button>
+          <img class="logo" src="./img/protexcoLogo.png" alt="DarkDive Logo">
+        </div>
+        <div class="stroke"></div>
+        <nav class="nav flex-column w-100">
+          <a class="nav-link" href="#"><img src="img/dasboardIconBlue.svg" class="me-2" id="dashboard">Dashboard</a>
+          <a class="nav-link active" href="#"><img src="img/brandIdentityicon.svg" class="me-2" id="Brand">Brand
+            Identity</a>
+          <a class="nav-link" href="#"><img src="img/leaksicon.svg" class="me-2" id="Leaks">Leaks</a>
+          <a class="nav-link" href="#"><img src="img/alertsicon.svg" class="me-2" id="Alerts">Alerts</a>
+          <a class="nav-link" href="#"><img src="img/customerIcon.svg" class="me-2" id="Customers">Customers</a>
+          <a class="nav-link" href="#"><img src="img/activitylogsIcon.svg" class="me-2" id="Activity">Activity Logs</a>
+          <a class="nav-link" href="#"><img src="img/settingIcon.svg" class="me-2" id="Setting">Setting</a>
+        </nav>
+      </div>
+      <div class="text-muted small mt-auto">© 2025</div>
+    </div>
+
+
+    <!-- Main -->
+    <div class="flex-grow-1 main-content">
+      <!-- Header -->
+      <div class="topbar d-flex justify-content-between align-items-center px-4 pb-2">
+        <h4 class="m-0">Brand Identity</h4>
+        <div class="d-flex align-items-center gap-3">
+          <!-- Sign In with Icon -->
+          <a href="#" class="text-decoration-none d-flex align-items-center gap-2" style="color: #718096;">
+            <img src="img/profileIcon.png" alt="Sign In Icon">
+          </a>
+        </div>
+      </div>
+
+
+      <!-- Content -->
+      <div class="container-fluid py-4 px-4" style="height: 100vh;">
+        <div class="brand-identity-section d-flex flex-column justify-content-start align-items-start mb-5">
+          <h5 class="text-white mb-2">Detect phishing, typosquatting, and lookalike domains by scanning DNS records,
+            WHOIS data, and web content.</h5>
+          <div class="d-flex align-items-center gap-3 w-100 mt-3">
+            <div class="flex-grow-1">
+              <div class="custom-dropdown" id="dropdown">
+                <div class="dropdown-toggle" id="dropdownToggle">Select domain</div>
+                <div class="dropdown-menu mt-2" id="dropdownMenu">
+                  <div class="dropdown-item">example.com</div>
+                  <div class="dropdown-add-box d-flex" id="dropdownAddBox">
+                    <input type="text" id="newDomainInput" placeholder="Enter domain">
+                    <button id="addDomainBtn">Add</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn scan-btn px-4 py-2 btn-signup" onclick="showTable()">Scan Domain</button>
+          </div>
+        </div>
+        <div class="table-container" id="scanTable">
+          <table>
+            <thead>
+              <tr>
+                <th>Variation</th>
+                <th>Registration Date</th>
+                <th>IP Address</th>
+                <th>Server Names</th>
+                <th>Mail Server</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>example.com</td>
+                <td>1995-08-14</td>
+                <td>93.184.216.34</td>
+                <td>a.iana-servers.net</td>
+                <td>mail.example.com</td>
+              </tr>
+              <tr>
+                <td>examp1e.com</td>
+                <td>2018-03-22</td>
+                <td>104.21.30.120</td>
+                <td>a.iana-servers.net</td>
+                <td>mail.example.com</td>
+              </tr>
+              <tr>
+                <td>exampl3.com</td>
+                <td>2020-11-05</td>
+                <td>172.67.162.127</td>
+                <td>a.iana-servers.net</td>
+                <td>mail.example.com</td>
+              </tr>
+              <tr>
+                <td>exarnple.com</td>
+                <td>2019-07-18</td>
+                <td>185.53.177.31</td>
+                <td>a.iana-servers.net</td>
+                <td>mail.example.com</td>
+              </tr>
+              <tr>
+                <td>example-secure.com.com</td>
+                <td>2021-02-09</td>
+                <td>104.21.25.190</td>
+                <td>a.iana-servers.net</td>
+                <td>mail.example.com</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <script>
+    const dropdownToggle = document.getElementById('dropdownToggle');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    const addBox = document.getElementById('dropdownAddBox');
+    const addBtn = document.getElementById('addDomainBtn');
+    const input = document.getElementById('newDomainInput');
+
+    // Toggle dropdown
+    dropdownToggle.addEventListener('click', () => {
+      dropdownMenu.classList.toggle('show');
+      input.focus();
+    });
+
+    // Add new domain
+    addBtn.addEventListener('click', () => {
+      const value = input.value.trim();
+      if (!value) return alert('Please enter a domain.');
+
+      const newItem = document.createElement('div');
+      newItem.className = 'dropdown-item';
+      newItem.textContent = value;
+
+      newItem.addEventListener('click', () => {
+        dropdownToggle.textContent = value;
+        dropdownMenu.classList.remove('show');
+      });
+
+      // Insert before input box
+      dropdownMenu.insertBefore(newItem, addBox);
+
+      dropdownToggle.textContent = value;
+      input.value = '';
+      dropdownMenu.classList.remove('show');
+    });
+
+    // Enable selecting existing items
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+      item.addEventListener('click', () => {
+        dropdownToggle.textContent = item.textContent;
+        dropdownMenu.classList.remove('show');
+      });
+    });
+
+    function showTable() {
+      document.getElementById("scanTable").style.display = "block";
+    }
+  </script>
+</body>
+
+</html>
