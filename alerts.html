@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DarkDrive Alerts</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dashboard-body">
+  <div class="d-flex dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar d-flex flex-column align-items-start p-3">
+      <div class="w-100">
+        <div class="d-flex align-items-center mb-4 justify-content-evenly w-100">
+          <button class="menu-toggle"><img src="img/hamburger.svg" alt="hamburger"></button>
+          <img class="logo" src="./img/protexcoLogo.png" alt="DarkDive Logo">
+        </div>
+        <div class="stroke"></div>
+        <nav class="nav flex-column w-100">
+          <a class="nav-link" href="#"><img src="img/dasboardIconBlue.svg" class="me-2" id="dashboard">Dashboard</a>
+          <a class="nav-link" href="#"><img src="img/brandIdentityicon.svg" class="me-2" id="Brand">Brand
+            Identity</a>
+          <a class="nav-link" href="#"><img src="img/leaksicon.svg" class="me-2" id="Leaks">Leaks</a>
+          <a class="nav-link active" href="#"><img src="img/alertsicon.svg" class="me-2" id="Alerts">Alerts</a>
+          <a class="nav-link" href="#"><img src="img/customerIcon.svg" class="me-2" id="Customers">Customers</a>
+          <a class="nav-link" href="#"><img src="img/activitylogsIcon.svg" class="me-2" id="Activity">Activity Logs</a>
+          <a class="nav-link" href="#"><img src="img/settingIcon.svg" class="me-2" id="Setting">Setting</a>
+        </nav>
+      </div>
+      <div class="text-muted small mt-auto">© 2025</div>
+    </div>
+
+
+    <!-- Main -->
+    <div class="flex-grow-1 main-content">
+      <!-- Header -->
+      <div class="topbar d-flex justify-content-between align-items-center px-4 pb-2">
+        <h4 class="m-0">Alerts</h4>
+        <div class="d-flex align-items-center gap-3">
+          <!-- Sign In with Icon -->
+          <a href="#" class="text-decoration-none d-flex align-items-center gap-2" style="color: #718096;">
+            <img src="img/profileIcon.png" alt="Sign In Icon">
+          </a>
+        </div>
+      </div>
+
+
+      <!-- Content -->
+      <div class="container-fluid py-4 px-4" style="height: 100vh;">
+        <div class="brand-identity-section d-flex flex-column justify-content-start align-items-start mb-5">
+
+          <div class="d-flex align-items-center justify-content-end gap-3 w-100 mt-3">
+            <button class="btn scan-btn px-4 py-2 btn-signup" onclick="openModal()">Create Alerts</button>
+          </div>
+        </div>
+        <div class="table-container" id="alertsTable" style="display: block;">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Created Date</th>
+                <th>Categories</th>
+                <th>Severity</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>example.com</td>
+                <td>12-03-2025</td>
+                <td>Domain, Keyword</td>
+                <td><span class="badge icon_critical"><img src="img/critical.png"> Critical</span></td>
+                <td>
+                  <button class="edit_button me-2"><img src="img/editIcon.png" alt="edit"></button>
+                  <button class="delete_button"><img src="img/deleteIcon.png" alt="delete"></button>
+                </td>
+              </tr>
+              <tr>
+                <td>secure-alert.net</td>
+                <td>10-02-2025</td>
+                <td>Network</td>
+                <td><span class="badge icon_medium"><img src="img/medium.png"> Medium</span></td>
+                <td>
+                  <button class="edit_button me-2"><img src="img/editIcon.png" alt="edit"></button>
+                  <button class="delete_button"><img src="img/deleteIcon.png" alt="delete"></button>
+                </td>
+              </tr>
+              <tr>
+                <td>breach-watch.io</td>
+                <td>01-01-2025</td>
+                <td>Leak</td>
+                <td><span class="badge icon_low"><img src="img/low.png"> Low</span></td>
+                <td>
+                  <button class="edit_button me-2"><img src="img/editIcon.png" alt="edit"></button>
+                  <button class="delete_button"><img src="img/deleteIcon.png" alt="delete"></button>
+                </td>
+              </tr>
+              <tr>
+                <td>breach-watch.io</td>
+                <td>01-01-2025</td>
+                <td>Leak</td>
+                <td><span class="badge icon_high"><img src="img/high.png"> High</span></td>
+                <td>
+                  <button class="edit_button me-2"><img src="img/editIcon.png" alt="edit"></button>
+                  <button class="delete_button"><img src="img/deleteIcon.png" alt="delete"></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div id="alertModal" class="modal fade" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h5 class="modal-title fw-semibold">Create New Alert</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+            <form>
+              <!-- Keyword -->
+              <div class="mb-3">
+                <label class="form-label">Keyword</label>
+                <input type="text" class="form-control bg-transparent text-light border-secondary"
+                  placeholder="Enter keyword">
+              </div>
+
+              <!-- Event Categories -->
+              <div class="mb-3 position-relative" id="eventCategoryWrapper">
+                <label class="form-label">Event Categories</label>
+                <div class="custom-multiselect" id="customSelect"></div>
+                <div class="custom-options" id="customOptions"></div>
+
+                <!-- Hidden real select (to use in forms) -->
+                <select id="realSelect" name="eventCategories[]" multiple style="display: none;">
+                  <option value="Domain" selected>Domain</option>
+                  <option value="Keyword" selected>Keyword</option>
+                  <option value="Network">Network</option>
+                  <option value="Leak">Leak</option>
+                  <option value="Malware">Malware</option>
+                </select>
+              </div>
+
+
+              <!-- Severity Level -->
+              <div class="mb-3">
+                <label class="form-label">Severity Level</label>
+                <div class="d-flex flex-wrap gap-3">
+                  <button type="button" class="security_level_btns px-3"><img src="img/low.png"> Low</button>
+                  <button type="button" class="security_level_btns px-3"><img src="img/medium.png"> Medium</button>
+                  <button type="button" class="security_level_btns px-3"><img src="img/high.png"> High</button>
+                  <button type="button" class="security_level_btns px-3"><img src="img/critical.png"> Critical</button>
+                </div>
+              </div>
+
+              <!-- Alert Recipients -->
+              <div class="mb-3">
+                <label class="form-label">Alert Recipients (Email)</label>
+                <input type="email" class="form-control bg-transparent text-light border-secondary"
+                  placeholder="Enter email(s)">
+              </div>
+
+              <!-- Frequency & Time -->
+              <div class="d-flex gap-3 mb-4">
+                <div class="custom-select-wrapper position-relative w-100" style="max-width: 250px;">
+                  <label class="form-label">Alert Frequency</label>
+                  <input type="text" class="form-control text-white pe-5" placeholder="Select option" readonly
+                    data-bs-toggle="dropdown" id="customSelectInput" />
+                  <span class="alertSelect">
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </span>
+                  <ul class="dropdown-menu w-100 border-secondary text-white" id="customSelectMenu">
+                    <li><a class="dropdown-item text-white" href="#" data-value="Daily">Daily</a></li>
+                    <li><a class="dropdown-item text-white" href="#" data-value="Weekly">Weekly</a></li>
+                    <li><a class="dropdown-item text-white" href="#" data-value="Monthly">Monthly</a></li>
+                  </ul>
+                </div>
+                <div class="flex-fill">
+                  <label class="form-label">Time</label>
+                  <input type="time" class="form-control custom-time bg-transparent text-light border-secondary">
+                </div>
+              </div>
+
+              <!-- Create Button -->
+              <div class="text-end">
+                <button type="submit" class="btn-signup">Create Alerts</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (Add these before closing </body>) -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+  <script>
+
+    const input = document.getElementById("customSelectInput");
+    const items = document.querySelectorAll("#customSelectMenu .dropdown-item");
+
+    items.forEach(item => {
+      item.addEventListener("click", (e) => {
+        e.preventDefault();
+        input.value = item.dataset.value;
+      });
+    });
+
+    function openModal() {
+      const modal = new bootstrap.Modal(document.getElementById('alertModal'));
+      modal.show();
+    }
+
+    document.querySelectorAll('.edit_button').forEach(btn => {
+      btn.addEventListener('click', openModal);
+    });
+
+
+    const options = ["Domain", "Keyword", "Network", "Leak", "Malware"];
+    const selected = new Set(["Domain", "Keyword"]);
+    const customSelect = document.getElementById("customSelect");
+    const customOptions = document.getElementById("customOptions");
+    const realSelect = document.getElementById("realSelect");
+
+    function renderTags() {
+      customSelect.innerHTML = "";
+      selected.forEach(val => {
+        const tag = document.createElement("span");
+        tag.className = "tag";
+        tag.textContent = val;
+
+        const remove = document.createElement("span");
+        remove.className = "remove-tag";
+        remove.innerHTML = "&times;";
+        remove.onclick = (e) => {
+          e.stopPropagation();
+          selected.delete(val);
+          syncSelect();
+          renderTags();
+        };
+
+        tag.appendChild(remove);
+        customSelect.appendChild(tag);
+      });
+    }
+
+    function renderOptions() {
+      customOptions.innerHTML = "";
+      options.forEach(val => {
+        if (!selected.has(val)) {
+          const opt = document.createElement("div");
+          opt.textContent = val;
+          opt.onclick = () => {
+            selected.add(val);
+            syncSelect();
+            renderTags();
+            customOptions.style.display = "none";
+          };
+          customOptions.appendChild(opt);
+        }
+      });
+
+      customOptions.style.display = customOptions.childElementCount ? "block" : "none";
+    }
+
+    function syncSelect() {
+      Array.from(realSelect.options).forEach(option => {
+        option.selected = selected.has(option.value);
+      });
+    }
+
+    customSelect.addEventListener("click", () => {
+      renderOptions();
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!document.getElementById("eventCategoryWrapper").contains(e.target)) {
+        customOptions.style.display = "none";
+      }
+    });
+
+    // Initial render
+    renderTags();
+    syncSelect();
+  </script>
+</body>
+
+</html>

@@ -1266,13 +1266,14 @@ small {
 }
 
 .page-item:first-child .page-link {
-  border-top-left-radius:50% !important;
-  border-bottom-left-radius:50% !important;
+  border-top-left-radius: 50% !important;
+  border-bottom-left-radius: 50% !important;
 }
 
 .page-item:last-child .page-link {
-  border-top-right-radius:50% !important;
-  border-bottom-right-radius:50% !important;;
+  border-top-right-radius: 50% !important;
+  border-bottom-right-radius: 50% !important;
+  ;
 }
 
 .page-item.active .page-link {
@@ -1312,7 +1313,7 @@ small {
   text-decoration: none;
   color: #19ABEE !important;
   cursor: pointer;
-  border-color: #e2e8f04e!important;
+  border-color: #e2e8f04e !important;
 }
 
 .zoom-btn:hover {
@@ -1331,27 +1332,197 @@ small {
 }
 
 
+.icon_critical {
+  background-color: #FF626233 !important;
+  border-radius: 100px !important;
+  padding: 8px 12px !important;
+}
+
+.icon_medium {
+  background-color: #7693a03d !important;
+  border-radius: 100px !important;
+  padding: 8px 12px !important;
+}
+
+.icon_low {
+  background-color: #56f8923f !important;
+  border-radius: 100px !important;
+  padding: 8px 12px !important;
+}
+
+.icon_high {
+  background-color: #f8565647 !important;
+  border-radius: 100px !important;
+  padding: 8px 12px !important;
+}
+
+.edit_button {
+  background-color: transparent !important;
+  border: 1px solid #19ABEE !important;
+  border-radius: 100px !important;
+  padding: 2px 12px 5px 12px !important;
+  cursor: pointer;
+}
+
+.delete_button {
+  background-color: transparent !important;
+  border: 1px solid #FF6262 !important;
+  border-radius: 100px !important;
+  padding: 2px 12px 5px 12px !important;
+  cursor: pointer;
+}
 
 
 
+.modal-content {
+  background-color: #0F172A !important;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+}
+
+.form-label {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+}
+
+.btn-close {
+  filter: invert(1);
+}
 
 
+.modal-content {
+  color: #fff !important;
+  background: #07101F;
+  background: linear-gradient(100deg, rgba(7, 16, 31, 1) 0%, rgba(7, 16, 31, 0) 100%) !important;
+  backdrop-filter: blur(5px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(5px) saturate(180%) !important;
+  border-radius: 12px !important;
+  border: 1px solid #2A5061 !important;
+  padding: 40px 40px !important;
+}
 
 
+.custom-multiselect {
+  min-height: 120px;
+  border: 1px solid #505A5F;
+  padding: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 12px;
+  gap: 6px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+}
+
+.custom-multiselect .tag {
+  background-color: #172335;
+  border-radius: 20px;
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  max-height: 35px;
+}
+
+.custom-multiselect .tag .remove-tag {
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.custom-options {
+  position: absolute;
+  background-color: #1c1f23;
+  border: 1px solid #505A5F;
+  z-index: 999;
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  display: none;
+}
+
+.custom-options div {
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.custom-options div:hover {
+  background-color: #495057;
+}
+
+.security_level_btns {
+  background-color: transparent !important;
+  border: 1px solid #505A5F !important;
+  border-radius: 100px !important;
+  padding: 8px 12px !important;
+  cursor: pointer;
+  color:white !important
+}
 
 
+.security_level_btns:hover {
+  background-color: #505a5f63 !important;
+  color: white !important;
+}
+.security_level_btns.active {
+  background-color: #505a5f63 !important;
+  color: white !important;
+} 
+
+.form-control:focus {
+  color: var(--bs-body-color);
+  background-color: transparent !important;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 .25rem rgba(13,110,253,.25);
+}
+
+.alertSelect .fa-chevron-down:before {
+  content: "\f078";
+  position: absolute;
+  top: 50px;
+  right: 18px;
+}
 
 
+.custom-time {
+  background-color: transparent !important;
+  color: white;
+  border: 1px solid #6c757d; /* border-secondary */
+  padding: 14px 14px 12px 14px !important; /* room for the icon */
+  position: relative;
+  border-radius: 12px !important;
+}
 
+/* ::-webkit-calendar-picker-indicator is the icon for type="time" inputs */
+.custom-time::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* makes icon white */
+  cursor: pointer;
+}
 
+/* Firefox support */
+.custom-time:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 white;
+}
 
+.custom-time-style::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* makes the native icon white */
+  background-color: transparent;
+  cursor: pointer;
+  opacity: 1;
+}
 
-
-
-
-
-
-
+/* Firefox (limited styling) */
+.custom-time-style:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 white;
+}
 
 
 
