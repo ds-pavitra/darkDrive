@@ -709,7 +709,7 @@ input::placeholder {
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   padding: 12px 16px;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
@@ -798,6 +798,7 @@ input::placeholder {
 
 .stroke {
   width: 170px;
+  height: 1px;
   margin-bottom: 26px;
   background: #E0E1E2;
   background: linear-gradient(100deg, rgba(224, 225, 226, 0) 0%, rgba(224, 225, 226, 1) 50%, rgba(224, 225, 226, 0.16) 100%);
@@ -1461,7 +1462,7 @@ small {
   border-radius: 100px !important;
   padding: 8px 12px !important;
   cursor: pointer;
-  color:white !important
+  color: white !important
 }
 
 
@@ -1469,17 +1470,18 @@ small {
   background-color: #505a5f63 !important;
   color: white !important;
 }
+
 .security_level_btns.active {
   background-color: #505a5f63 !important;
   color: white !important;
-} 
+}
 
 .form-control:focus {
   color: var(--bs-body-color);
   background-color: transparent !important;
   border-color: #86b7fe;
   outline: 0;
-  box-shadow: 0 0 0 .25rem rgba(13,110,253,.25);
+  box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
 }
 
 .alertSelect .fa-chevron-down:before {
@@ -1493,15 +1495,18 @@ small {
 .custom-time {
   background-color: transparent !important;
   color: white;
-  border: 1px solid #6c757d; /* border-secondary */
-  padding: 14px 14px 12px 14px !important; /* room for the icon */
+  border: 1px solid #6c757d;
+  /* border-secondary */
+  padding: 14px 14px 12px 14px !important;
+  /* room for the icon */
   position: relative;
   border-radius: 12px !important;
 }
 
 /* ::-webkit-calendar-picker-indicator is the icon for type="time" inputs */
 .custom-time::-webkit-calendar-picker-indicator {
-  filter: invert(1); /* makes icon white */
+  filter: invert(1);
+  /* makes icon white */
   cursor: pointer;
 }
 
@@ -1512,7 +1517,8 @@ small {
 }
 
 .custom-time-style::-webkit-calendar-picker-indicator {
-  filter: invert(1); /* makes the native icon white */
+  filter: invert(1);
+  /* makes the native icon white */
   background-color: transparent;
   cursor: pointer;
   opacity: 1;
@@ -1523,6 +1529,379 @@ small {
   color: transparent;
   text-shadow: 0 0 0 white;
 }
+
+
+
+
+
+/* Custom Tab Navigation */
+.custom-nav-tabs {
+  border-bottom: none !important;
+  /* Custom border color for tab navigation */
+  /* margin-bottom: 20px !important; */
+}
+
+.custom-nav-item {
+  margin-right: 10px !important;
+}
+
+.custom-nav-link {
+  color: #fff !important;
+  /* Custom link color */
+  font-weight: bold !important;
+  padding: 10px 20px !important;
+  border: 1px solid transparent !important;
+  /* border-radius: 25px !important;  */
+  transition: background-color 0.3s, color 0.3s !important;
+  position: relative !important;
+}
+
+/* Active Tab */
+.custom-nav-link.active {
+  color: #4A90E2 !important;
+  background: linear-gradient(100deg, rgba(7, 16, 31, 1) 0%, rgba(7, 16, 31, 1) 100%) !important;
+  backdrop-filter: blur(5px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(5px) saturate(180%) !important;
+  border-color: #2A5061 !important;
+  border-bottom: none !important;
+  /* border-radius: 25px 25px 0 0 !important; */
+  z-index: 10;
+  /* border-bottom: 2px solid #2A5061 !important; */
+  position: relative;
+  z-index: 5;
+  top: 1px;
+}
+
+/* Hover Effect for Tabs */
+.custom-nav-link:hover {
+  color: #4A90E2 !important;
+  background: linear-gradient(100deg, rgba(7, 16, 31, 1) 0%, rgba(7, 16, 31, 1) 100%) !important;
+  backdrop-filter: blur(5px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(5px) saturate(180%) !important;
+  border-color: #2A5061 !important;
+  position: relative;
+  z-index: 5;
+  top: 1px;
+}
+
+/* Tab Content */
+.tab-content {
+  background: linear-gradient(100deg, rgba(7, 16, 31, 1) 0%, rgba(7, 16, 31, 0) 100%) !important;
+  backdrop-filter: blur(5px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(5px) saturate(180%) !important;
+  padding: 20px !important;
+  /* border-radius: 25px !important; */
+  border: 1px solid #2A5061 !important;
+  /* border-top: none !important; */
+  color: #fff !important;
+  /* White text */
+  /* margin-top: -10px; */
+}
+
+/* Customize the form input fields */
+.form-control {
+  background-color: #34495E !important;
+  border: 1px solid #4A90E2 !important;
+  color: #fff !important;
+}
+
+/* Input Focus */
+.form-control:focus {
+  border-color: #357ABD !important;
+  box-shadow: 0 0 5px rgba(53, 122, 189, 0.5) !important;
+}
+
+/* Button Style for Severity Level */
+.security_level_btns {
+  background-color: #34495E !important;
+  color: #fff !important;
+  /* border-radius: 25px !important; */
+  padding: 10px 20px !important;
+  transition: background-color 0.3s !important;
+  border: none !important;
+}
+
+.security_level_btns img {
+  margin-right: 5px !important;
+}
+
+/* Hover Effect for Severity Buttons */
+.security_level_btns:hover {
+  background-color: #4A90E2 !important;
+}
+
+
+
+
+
+
+
+.plan-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #1b2d3f;
+  padding-bottom: 10px;
+}
+
+.current-plan {
+  background-color: #0078a8;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 12px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.plan-tab {
+  padding: 10px 30px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+}
+
+.plan-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -11px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #0078a8;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.pricing-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pricing-header {
+  text-align: left;
+  width: 100%;
+  color: #8d9caa;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 56px;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+.dollar {
+  font-size: 24px;
+  vertical-align: top;
+  margin-right: 2px;
+}
+
+.pricing-button {
+  background-color: transparent;
+  color: #0db3fe;
+  border: 1px solid #0db3fe;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.pricing-button:hover {
+  background-color: rgba(13, 179, 254, 0.1);
+}
+
+.pricing-button.primary {
+  background-color: #0db3fe;
+  color: white;
+}
+
+.pricing-button.primary:hover {
+  background-color: #0a99db;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.feature-label {
+  color: #8d9caa;
+  font-size: 14px;
+  padding: 10px 0;
+}
+
+.feature-value {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.cross {
+  color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+
+  .pricing-grid,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+.settings-container {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  padding: 30px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0 0 10px 10px;
+  z-index: 1;
+  position: relative;
+}
+
+/* Toggle Switch */
+.toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #444;
+  border-radius: 30px;
+  transition: 0.4s;
+  border: 1px solid #505A5F;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked+.slider {
+  background-color: transparent;
+}
+
+input:checked+.slider:before {
+  transform: translateX(20px);
+  background-color: #19ABEE;
+}
+
+/* Form Styling */
+.form {
+  margin-top: 20px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.form-control {
+  padding: 10px;
+  border: 1px solid #4A90E2;
+  background-color: #1e2a38;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #00BFFF;
+  box-shadow: 0 0 5px rgba(0, 191, 255, 0.4);
+}
+
+/* Save Button */
+.save-btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border: 1px solid #4A90E2;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.save-btn:hover {
+  background-color: #00BFFF;
+  color: #000;
+}
+
+
+.innerContainer {
+  background: linear-gradient(100deg, rgba(7, 16, 31, 1) 0%, rgba(7, 16, 31, 0) 100%) !important;
+  backdrop-filter: blur(5px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(5px) saturate(180%) !important;
+  padding: 30px !important;
+  border-radius: 12px !important;
+  border: 1px solid #2A5061 !important;
+}
+
+
+
+
+
+
 
 
 

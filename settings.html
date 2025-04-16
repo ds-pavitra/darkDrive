@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DarkDrive Settings</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="dashboard-body">
+  <div class="d-flex dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar d-flex flex-column align-items-start p-3">
+      <div class="w-100">
+        <div class="d-flex align-items-center mb-4 justify-content-evenly w-100">
+          <button class="menu-toggle"><img src="img/hamburger.svg" alt="hamburger"></button>
+          <img class="logo" src="./img/protexcoLogo.png" alt="DarkDive Logo">
+        </div>
+        <div class="stroke"></div>
+        <nav class="nav flex-column w-100">
+          <a class="nav-link" href="#"><img src="img/dasboardIconBlue.svg" class="me-2" id="dashboard">Dashboard</a>
+          <a class="nav-link" href="#"><img src="img/brandIdentityicon.svg" class="me-2" id="Brand">Brand
+            Identity</a>
+          <a class="nav-link" href="#"><img src="img/leaksicon.svg" class="me-2" id="Leaks">Leaks</a>
+          <a class="nav-link" href="#"><img src="img/alertsicon.svg" class="me-2" id="Alerts">Alerts</a>
+          <a class="nav-link" href="#"><img src="img/customerIcon.svg" class="me-2" id="Customers">Customers</a>
+          <a class="nav-link" href="#"><img src="img/activitylogsIcon.svg" class="me-2" id="Activity">Activity Logs</a>
+          <a class="nav-link active" href="#"><img src="img/settingIcon.svg" class="me-2" id="Setting">Setting</a>
+        </nav>
+      </div>
+      
+    </div>
+
+
+    <!-- Main -->
+    <div class="flex-grow-1 main-content">
+      <!-- Header -->
+      <div class="topbar d-flex justify-content-between align-items-center px-4 pb-2">
+        <h4 class="m-0">Settings</h4>
+        <div class="d-flex align-items-center gap-3">
+          <!-- Sign In with Icon -->
+          <a href="#" class="text-decoration-none d-flex align-items-center gap-2" style="color: #718096;">
+            <img src="img/profileIcon.png" alt="Sign In Icon">
+          </a>
+        </div>
+      </div>
+
+
+      <!-- Content -->
+      <div class="container-fluid py-4 px-4" style="height: 1000px;">
+        <div class="brand-identity-section d-flex flex-column justify-content-start align-items-start mb-5">
+        </div>
+        <ul class="nav nav-tabs custom-nav-tabs" id="alertModalTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a class="nav-link active custom-nav-link" id="tab-1" data-bs-toggle="tab" href="#keywordTab" role="tab"
+              aria-controls="keywordTab" aria-selected="true">User Details</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link custom-nav-link" id="tab-2" data-bs-toggle="tab" href="#eventCategoryTab" role="tab"
+              aria-controls="eventCategoryTab" aria-selected="false">Plan Upgradation</a>
+          </li>
+          <li class="nav-item" role="presentation">
+            <a class="nav-link custom-nav-link" id="tab-3" data-bs-toggle="tab" href="#severityLevelTab" role="tab"
+              aria-controls="severityLevelTab" aria-selected="false">API Management</a>
+          </li>
+        </ul>
+
+        <div class="tab-content p-3" id="alertModalTabContent">
+          <!-- Keyword Tab -->
+          <div class="tab-pane fade show active" id="keywordTab" role="tabpanel" aria-labelledby="tab-1">
+            <div class="mb-3">
+              <div class="toggle-row">
+                <label for="editable">Editable</label>
+                <label class="switch">
+                  <input type="checkbox" id="editable" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+
+              <form class="form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label>Company</label>
+                    <input type="text" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" />
+                  </div>
+                </div>
+                <button type="submit" class="save-btn">Save</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Event Categories Tab -->
+          <div class="tab-pane fade" id="eventCategoryTab" role="tabpanel" aria-labelledby="tab-2">
+            <div class="feature-grid p-4">
+
+              <div class="feature-label"> </div>
+              <div class="feature-value">
+                <div class="current-plan">Current Plan</div>
+              </div>
+              <div class="feature-value"> </div>
+              <div class="feature-value"> </div>
+              <div class="feature-value"> </div>
+
+              <div class="feature-label"> </div>
+              <div class="feature-value">Basic</div>
+              <div class="feature-value">General</div>
+              <div class="feature-value">Cosmetic</div>
+              <div class="feature-value">Restorative</div>
+
+              <div class="feature-label"> </div>
+              <div class="feature-value d-flex justify-content-center">
+                <div class="stroke"></div>
+              </div>
+              <div class="feature-value d-flex justify-content-center">
+                <div class="stroke"></div>
+              </div>
+              <div class="feature-value d-flex justify-content-center">
+                <div class="stroke"></div>
+              </div>
+              <div class="feature-value d-flex justify-content-center">
+                <div class="stroke"></div>
+              </div>
+
+              <div class="feature-label">Prices</div>
+              <div class="feature-value">
+                <div class="price"><span class="dollar">$</span>11</div>
+                <button class="pricing-button">Renew Plan</button>
+              </div>
+              <div class="feature-value">
+                <div class="price"><span class="dollar">$</span>53</div>
+                <button class="pricing-button primary">Choose Plan</button>
+              </div>
+              <div class="feature-value">
+                <div class="price"><span class="dollar">$</span>231</div>
+                <button class="pricing-button primary">Choose Plan</button>
+              </div>
+              <div class="feature-value">
+                <div class="price"><span class="dollar">$</span>1,541</div>
+                <button class="pricing-button primary">Choose Plan</button>
+              </div>
+
+              <div class="feature-label">Search Limit</div>
+              <div class="feature-value">10</div>
+              <div class="feature-value">10</div>
+              <div class="feature-value">10</div>
+              <div class="feature-value">10</div>
+
+              <div class="feature-label">Alert Limit</div>
+              <div class="feature-value">5</div>
+              <div class="feature-value">5</div>
+              <div class="feature-value">5</div>
+              <div class="feature-value">5</div>
+
+              <div class="feature-label">API support</div>
+              <div class="feature-value"><span class="cross">✕</span></div>
+              <div class="feature-value"><span class="cross">✕</span></div>
+              <div class="feature-value"><span class="cross">✕</span></div>
+              <div class="feature-value"><span class="cross">✕</span></div>
+
+              <div class="feature-label">Domain Search API</div>
+              <div class="feature-value"><span class="cross">✕</span></div>
+              <div class="feature-value"><span class="cross">✕</span></div>
+              <div class="feature-value"><span class="cross">✕</span></div>
+              <div class="feature-value"><span class="cross">✕</span></div>
+
+              <div class="feature-label">Leaks API</div>
+              <div class="feature-value"><span class="cross">✕</span></div>
+              <div class="feature-value"><span class="cross">✕</span></div>
+              <div class="feature-value"><span class="cross">✕</span></div>
+              <div class="feature-value"><span class="cross">✕</span></div>
+
+              <div class="feature-label">Download</div>
+              <div class="feature-value">10/day</div>
+              <div class="feature-value">10/day</div>
+              <div class="feature-value">10/day</div>
+              <div class="feature-value">10/day</div>
+
+              <div class="feature-label">Export</div>
+              <div class="feature-value">10/day</div>
+              <div class="feature-value">10/day</div>
+              <div class="feature-value">10/day</div>
+              <div class="feature-value">10/day</div>
+            </div>
+          </div>
+
+          <!-- Severity Level Tab -->
+          <div class="tab-pane fade" id="severityLevelTab" role="tabpanel" aria-labelledby="tab-3">
+            <div class="mb-3">
+              <div class="brand-identity-section d-flex flex-column justify-content-start align-items-start mb-5">
+
+                <div class="d-flex align-items-center gap-3 w-100 mt-3">
+                  <div class="flex-grow-1">
+                    <div>
+                      <label class="input-group-label">API Key</label>
+                      <div class="d-flex align-items-center">
+                        <input type="text" value="API-6y46baqfau" style="width: 250px;">
+                        <button class="export-btn mx-3">Copy</button>
+                        <button class="btn-signup px-1 py-2">Generate</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="innerContainer">
+                <div class="d-flex mb-3">
+                  <input type="text" style="width: 250px;">
+                  <button class="btn-login mx-3">Add</button>
+                </div>
+                <div class="table-container" id="scanTable" style="display: block;">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Whitelisted IPs</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1.1.1.1</td>
+                        <td><button class="delete_button"><img src="img/deleteIcon.png" alt="delete"></button></td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (Add these before closing </body>) -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+  <script>
+
+
+  </script>
+</body>
+
+</html>
