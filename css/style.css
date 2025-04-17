@@ -1361,18 +1361,46 @@ small {
   background-color: transparent !important;
   border: 1px solid #19ABEE !important;
   border-radius: 100px !important;
-  padding: 2px 12px 5px 12px !important;
+  padding: 2px 12px 5px 12px;
   cursor: pointer;
+  color: #19ABEE !important;
 }
 
 .delete_button {
   background-color: transparent !important;
   border: 1px solid #FF6262 !important;
   border-radius: 100px !important;
-  padding: 2px 12px 5px 12px !important;
+  padding: 2px 12px 5px 12px;
   cursor: pointer;
+  color: #FF6262 !important;
 }
 
+.verify_button {
+  color: #07101F;
+  background-color: #19ABEE;
+  border-radius: 100px;
+  cursor: pointer;
+  padding: 5px 12px 5px 12px;
+  border: none;
+}
+
+.suspend_button {
+  color: #fff;
+  background-color: #FF6262;
+  border-radius: 100px;
+  cursor: pointer;
+  padding: 5px 12px 5px 12px;
+  border: none;
+}
+
+.unsuspend_button {
+  color: #fff;
+  background-color: #F87F56;
+  border-radius: 100px;
+  cursor: pointer;
+  padding: 5px 12px 5px 12px;
+  border: none;
+}
 
 
 .modal-content {
@@ -1897,9 +1925,115 @@ input:checked+.slider:before {
   border: 1px solid #2A5061 !important;
 }
 
+.activityPlaceholder::placeholder {
+  color: #ffffffac !important;
+  opacity: 1;
+  /* Ensures it's fully visible */
+}
+
+/* Optional: Cross-browser support */
+.activityPlaceholder::-webkit-input-placeholder {
+  color: #ffffffac !important;
+}
+
+.activityPlaceholder:-ms-input-placeholder {
+  color: #ffffffac !important;
+}
+
+.activityPlaceholder::-moz-placeholder {
+  color: #ffffffac !important;
+  opacity: 1;
+}
+
+.activityPlaceholder:-moz-placeholder {
+  color: #ffffffac !important;
+  opacity: 1;
+}
+
+#customerTable td {
+  font-size: 14px;
+}
 
 
+.sort-box-customers {
+  width: 150px;
+}
 
+.sort-dropdown-customers {
+  position: absolute;
+  z-index: 10;
+  width: 150px;
+  right: 0;
+}
+
+.infoHeading {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.infoSmall {
+  color: #ffffff92;
+  font-size: 14px;
+  margin: 0;
+}
+
+
+.custom-select-wrapper {
+  position: relative;
+  max-width: 100%;
+}
+
+.custom-select {
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.custom-select .chevron-icon {
+  transition: transform 0.3s ease;
+  color: #ccc;
+}
+
+.custom-select.open .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.options {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  width: 100%;
+  background: linear-gradient(135deg, #050e1f, #071d30);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 10px 0;
+  z-index: 10;
+}
+
+.option {
+  padding: 10px 16px;
+  color: #ddd;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.option:hover {
+  background-color: #1c2f4c;
+}
+
+.custom-select.open+.options {
+  display: block;
+}
 
 
 
