@@ -18,22 +18,42 @@
     <div class="sidebar d-flex flex-column align-items-start p-3">
       <div class="w-100">
         <div class="d-flex align-items-center mb-4 justify-content-evenly w-100">
-          <button class="menu-toggle"><img src="img/hamburger.svg" alt="hamburger"></button>
+          <button class="menu-toggle" id="menuBtn"><img src="img/hamburger.svg" alt="hamburger"></button>
           <img class="logo" src="./img/protexcoLogo.png" alt="DarkDive Logo">
         </div>
         <div class="stroke"></div>
         <nav class="nav flex-column w-100">
-          <a class="nav-link" href="dashboard.html"><img src="img/dasboardIconBlue.svg" class="me-2" id="dashboard">Dashboard</a>
-          <a class="nav-link" href="brand-identity.html"><img src="img/brandIdentityicon.svg" class="me-2" id="Brand">Brand
-            Identity</a>
-          <a class="nav-link active" href="leaks.html"><img src="img/leaksicon.svg" class="me-2" id="Leaks">Leaks</a>
-          <a class="nav-link" href="alerts.html"><img src="img/alertsicon.svg" class="me-2" id="Alerts">Alerts</a>
-          <a class="nav-link" href="customers.html"><img src="img/customerIcon.svg" class="me-2" id="Customers">Customers</a>
-          <a class="nav-link" href="activity.html"><img src="img/activitylogsIcon.svg" class="me-2" id="Activity">Activity Logs</a>
-          <a class="nav-link" href="settings.html"><img src="img/settingIcon.svg" class="me-2" id="Setting">Setting</a>
+          <a class="nav-link" href="dashboard.html">
+            <img src="img/dasboardIconBlue.svg" class="me-2" id="dashboard">
+            <span class="ms-2">Dashboard</span>
+          </a>
+          <a class="nav-link" href="brand-identity.html">
+            <img src="img/brandIdentityicon.svg" class="me-2" id="Brand">
+            <span class="ms-2">Brand Identity</span>
+          </a>
+          <a class="nav-link active" href="leaks.html">
+            <img src="img/leaksicon.svg" class="me-2" id="Leaks">
+            <span class="ms-2">Leaks</span>
+          </a>
+          <a class="nav-link" href="alerts.html">
+            <img src="img/alertsicon.svg" class="me-2" id="Alerts">
+            <span class="ms-2">Alerts</span>
+          </a>
+          <a class="nav-link" href="customers.html">
+            <img src="img/customerIcon.svg" class="me-2" id="Customers">
+            <span class="ms-2">Customers</span>
+          </a>
+          <a class="nav-link" href="activity.html">
+            <img src="img/activitylogsIcon.svg" class="me-2" id="Activity">
+            <span class="ms-2">Activity Logs</span>
+          </a>
+          <a class="nav-link" href="settings.html">
+            <img src="img/settingIcon.svg" class="me-2" id="Setting">
+            <span class="ms-2">Setting</span>
+          </a>
         </nav>
       </div>
-      
+
     </div>
 
     <!-- Main Content -->
@@ -160,6 +180,68 @@
     }
 
     updateZoom(); // initialize on load
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleButton = document.getElementById('menuBtn');
+      const sidebar = document.querySelector('.sidebar');
+      const mainContent = document.querySelector('.main-content');
+      const logo = sidebar.querySelector('.logo');
+      const stroke = sidebar.querySelector('.stroke');
+      const navLinks = sidebar.querySelectorAll('.nav-link');
+      const linkTexts = sidebar.querySelectorAll('.nav-link span');
+
+      toggleButton.addEventListener('click', () => {
+        const collapsed = sidebar.classList.toggle('sidebar-collapsed');
+        mainContent.classList.toggle('main-content-collapsed');
+
+        if (collapsed) {
+          // Hide logo
+          if (logo) logo.style.display = 'none';
+
+          // Shrink stroke
+          if (stroke) {
+            stroke.style.width = '40px';
+            stroke.style.margin = '10px auto';
+          }
+
+          // Hide nav-link text
+          linkTexts.forEach(span => {
+            span.style.display = 'none';
+            span.style.opacity = '0';
+          });
+
+          // Center icon and remove padding
+          navLinks.forEach(link => {
+            link.style.justifyContent = 'center';
+            link.style.padding = '12px 0';
+            link.style.background = 'none'; // remove active/hover background
+          });
+        } else {
+          // Show logo
+          if (logo) logo.style.display = 'block';
+
+          // Expand stroke
+          if (stroke) {
+            stroke.style.width = '170px';
+            stroke.style.marginBottom = '26px';
+            stroke.style.margin = ''; // reset margin auto
+          }
+
+          // Show nav-link text
+          linkTexts.forEach(span => {
+            span.style.display = 'inline';
+            span.style.opacity = '1';
+          });
+
+          // Reset nav-link styles
+          navLinks.forEach(link => {
+            link.style.justifyContent = '';
+            link.style.padding = '12px 16px';
+            link.style.background = ''; // clear inline background
+          });
+        }
+      });
+    });
   </script>
 
 </body>
