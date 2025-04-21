@@ -2264,6 +2264,7 @@ input:checked+.slider:before {
 
   .table-bg {
     padding: 20px;
+    height: 960px;
   }
 
   #LeaksTable table {
