@@ -61,7 +61,7 @@
       <!-- Topbar -->
       <div class="topbar d-flex justify-content-between align-items-center px-4 pb-2">
         <h4 class="m-0">Leaks Database</h4>
-        <div class="d-flex align-items-center gap-3">
+        <div class="d-flex align-items-center gap-3 leaksDiv">
           <button class="export-btn">
             <i class="fa-solid fa-download me-1"></i> Export
           </button>
@@ -72,7 +72,7 @@
         </div>
       </div>
 
-      <div class="container-fluid py-4 px-4" style="height: 100vh;">
+      <div class="container-fluid biMainContainer" style="height: 100vh;">
         <div class="search-box">
           <div class="row g-3 align-items-center">
             <div class="col-md-7">
@@ -142,125 +142,127 @@
 
           </div>
           <div class="table-container" id="LeaksTable">
-            <table>
-              <thead>
-                <tr>
-                  <th>File Name & Upload Date</th>
-                  <th>Matched Data</th>
-                  <th>View File</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="d-flex">
-                    <div class="checkbox-group align-items-start mt-0">
-                      <input type="checkbox" />
-                    </div>
-                    <div>
-                      <strong>Customer_data_2023.txt</strong><br />
-                      <small><i class="fa-regular fa-calendar calendar-icon"></i> 2023-12-15</small><br />
-                      <small><i class="fa-regular fa-file-word calendar-icon"></i> TXT</small>
-                    </div>
-                  </td>
-                  <td>User ID: 12345, Name: John Smith, Email: john.smith@example.com, ,<br /> Password: securepass123,
-                    Address:
-                    123 Main ST, Phone: 555-123-4567</td>
-                  <td>
-                    <button class="btn-login">View</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="d-flex">
-                    <div class="checkbox-group align-items-start mt-0">
-                      <input type="checkbox" />
-                    </div>
-                    <div>
-                      <strong>Customer_data_2023.txt</strong><br />
-                      <small><i class="fa-regular fa-calendar calendar-icon"></i> 2023-12-15</small><br />
-                      <small><i class="fa-regular fa-file-word calendar-icon"></i> DOC</small>
-                    </div>
-                  </td>
-                  <td>User ID: 12345, Name: John Smith, Email: john.smith@example.com,<br />
-                    Password: securepass123, Address: 123 Main ST, Phone: 555-123-4567</td>
-                  <td>
-                    <button class="btn-login">View</button>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="d-flex">
-                    <div class="checkbox-group align-items-start mt-0">
-                      <input type="checkbox" />
-                    </div>
-                    <div>
-                      <strong>Customer_data_2023.txt</strong><br />
-                      <small><i class="fa-regular fa-calendar calendar-icon"></i> 2023-12-15</small><br />
-                      <small><i class="fa-regular fa-file-word calendar-icon"></i> DOC</small>
-                    </div>
-                  </td>
-                  <td>User ID: 12345, Name: John Smith, Email: john.smith@example.com,<br />
-                    Password: securepass123, Address: 123 Main ST, Phone: 555-123-4567</td>
-                  <td>
-                    <button class="btn-login">View</button>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="d-flex">
-                    <div class="checkbox-group align-items-start mt-0">
-                      <input type="checkbox" />
-                    </div>
-                    <div>
-                      <strong>Customer_data_2023.txt</strong><br />
-                      <small><i class="fa-regular fa-calendar calendar-icon"></i> 2023-12-15</small><br />
-                      <small><i class="fa-regular fa-file-word calendar-icon"></i> DOC</small>
-                    </div>
-                  </td>
-                  <td>User ID: 12345, Name: John Smith, Email: john.smith@example.com,<br />
-                    Password: securepass123, Address: 123 Main ST, Phone: 555-123-4567</td>
-                  <td>
-                    <button class="btn-login">View</button>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="d-flex">
-                    <div class="checkbox-group align-items-start mt-0">
-                      <input type="checkbox" />
-                    </div>
-                    <div>
-                      <strong>Customer_data_2023.txt</strong><br />
-                      <small><i class="fa-regular fa-calendar calendar-icon"></i> 2023-12-15</small><br />
-                      <small><i class="fa-regular fa-file-word calendar-icon"></i> DOC</small>
-                    </div>
-                  </td>
-                  <td>User ID: 12345, Name: John Smith, Email: john.smith@example.com,<br />
-                    Password: securepass123, Address: 123 Main ST, Phone: 555-123-4567</td>
-                  <td>
-                    <button class="btn-login">View</button>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="d-flex">
-                    <div class="checkbox-group align-items-start mt-0">
-                      <input type="checkbox" />
-                    </div>
-                    <div>
-                      <strong>Customer_data_2023.txt</strong><br />
-                      <small><i class="fa-regular fa-calendar calendar-icon"></i> 2023-12-15</small><br />
-                      <small><i class="fa-regular fa-file-word calendar-icon"></i> DOC</small>
-                    </div>
-                  </td>
-                  <td>User ID: 12345, Name: John Smith, Email: john.smith@example.com,<br />
-                    Password: securepass123, Address: 123 Main ST, Phone: 555-123-4567</td>
-                  <td>
-                    <button class="btn-login">View</button>
-                  </td>
-                </tr>
-
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th>File Name & Upload Date</th>
+                    <th>Matched Data</th>
+                    <th>View File</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="d-flex">
+                      <div class="checkbox-group align-items-start mt-0">
+                        <input type="checkbox" />
+                      </div>
+                      <div>
+                        <strong>Customer_data_2023.txt</strong><br />
+                        <small><i class="fa-regular fa-calendar calendar-icon"></i> 2023-12-15</small><br />
+                        <small><i class="fa-regular fa-file-word calendar-icon"></i> TXT</small>
+                      </div>
+                    </td>
+                    <td>User ID: 12345, Name: John Smith, Email: john.smith@example.com, ,<br /> Password: securepass123,
+                      Address:
+                      123 Main ST, Phone: 555-123-4567</td>
+                    <td>
+                      <button class="btn-login">View</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="d-flex">
+                      <div class="checkbox-group align-items-start mt-0">
+                        <input type="checkbox" />
+                      </div>
+                      <div>
+                        <strong>Customer_data_2023.txt</strong><br />
+                        <small><i class="fa-regular fa-calendar calendar-icon"></i> 2023-12-15</small><br />
+                        <small><i class="fa-regular fa-file-word calendar-icon"></i> DOC</small>
+                      </div>
+                    </td>
+                    <td>User ID: 12345, Name: John Smith, Email: john.smith@example.com,<br />
+                      Password: securepass123, Address: 123 Main ST, Phone: 555-123-4567</td>
+                    <td>
+                      <button class="btn-login">View</button>
+                    </td>
+                  </tr>
+  
+                  <tr>
+                    <td class="d-flex">
+                      <div class="checkbox-group align-items-start mt-0">
+                        <input type="checkbox" />
+                      </div>
+                      <div>
+                        <strong>Customer_data_2023.txt</strong><br />
+                        <small><i class="fa-regular fa-calendar calendar-icon"></i> 2023-12-15</small><br />
+                        <small><i class="fa-regular fa-file-word calendar-icon"></i> DOC</small>
+                      </div>
+                    </td>
+                    <td>User ID: 12345, Name: John Smith, Email: john.smith@example.com,<br />
+                      Password: securepass123, Address: 123 Main ST, Phone: 555-123-4567</td>
+                    <td>
+                      <button class="btn-login">View</button>
+                    </td>
+                  </tr>
+  
+                  <tr>
+                    <td class="d-flex">
+                      <div class="checkbox-group align-items-start mt-0">
+                        <input type="checkbox" />
+                      </div>
+                      <div>
+                        <strong>Customer_data_2023.txt</strong><br />
+                        <small><i class="fa-regular fa-calendar calendar-icon"></i> 2023-12-15</small><br />
+                        <small><i class="fa-regular fa-file-word calendar-icon"></i> DOC</small>
+                      </div>
+                    </td>
+                    <td>User ID: 12345, Name: John Smith, Email: john.smith@example.com,<br />
+                      Password: securepass123, Address: 123 Main ST, Phone: 555-123-4567</td>
+                    <td>
+                      <button class="btn-login">View</button>
+                    </td>
+                  </tr>
+  
+                  <tr>
+                    <td class="d-flex">
+                      <div class="checkbox-group align-items-start mt-0">
+                        <input type="checkbox" />
+                      </div>
+                      <div>
+                        <strong>Customer_data_2023.txt</strong><br />
+                        <small><i class="fa-regular fa-calendar calendar-icon"></i> 2023-12-15</small><br />
+                        <small><i class="fa-regular fa-file-word calendar-icon"></i> DOC</small>
+                      </div>
+                    </td>
+                    <td>User ID: 12345, Name: John Smith, Email: john.smith@example.com,<br />
+                      Password: securepass123, Address: 123 Main ST, Phone: 555-123-4567</td>
+                    <td>
+                      <button class="btn-login">View</button>
+                    </td>
+                  </tr>
+  
+                  <tr>
+                    <td class="d-flex">
+                      <div class="checkbox-group align-items-start mt-0">
+                        <input type="checkbox" />
+                      </div>
+                      <div>
+                        <strong>Customer_data_2023.txt</strong><br />
+                        <small><i class="fa-regular fa-calendar calendar-icon"></i> 2023-12-15</small><br />
+                        <small><i class="fa-regular fa-file-word calendar-icon"></i> DOC</small>
+                      </div>
+                    </td>
+                    <td>User ID: 12345, Name: John Smith, Email: john.smith@example.com,<br />
+                      Password: securepass123, Address: 123 Main ST, Phone: 555-123-4567</td>
+                    <td>
+                      <button class="btn-login">View</button>
+                    </td>
+                  </tr>
+  
+                </tbody>
+              </table>
+            </div>
           </div>
 
           <div class="table-footer d-flex justify-content-between align-items-center flex-wrap mt-3">
@@ -288,6 +290,74 @@
 
 
   <script>
+
+function checkViewportWidth() {
+      const sidebar = document.querySelector('.sidebar');
+      const mainContent = document.querySelector('.main-content');
+      const logo = sidebar.querySelector('.logo');
+      const stroke = sidebar.querySelector('.stroke');
+      const navLinks = sidebar.querySelectorAll('.nav-link');
+      const linkTexts = sidebar.querySelectorAll('.nav-link span');
+      
+      if (window.innerWidth <= 768) { // 768px is a common breakpoint for tablets
+        sidebar.classList.add('sidebar-collapsed');
+        mainContent.classList.add('main-content-collapsed');
+        
+        // Hide logo
+        if (logo) logo.style.display = 'none';
+
+        // Shrink stroke
+        if (stroke) {
+          stroke.style.width = '40px';
+          stroke.style.margin = '10px auto';
+        }
+
+        // Hide nav-link text
+        linkTexts.forEach(span => {
+          span.style.display = 'none';
+          span.style.opacity = '0';
+        });
+
+        // Center icon and remove padding
+        navLinks.forEach(link => {
+          link.style.justifyContent = 'center';
+          link.style.padding = '12px 0';
+          link.style.background = 'none';
+        });
+      } else {
+        sidebar.classList.remove('sidebar-collapsed');
+        mainContent.classList.remove('main-content-collapsed');
+        
+        // Show logo
+        if (logo) logo.style.display = 'block';
+
+        // Expand stroke
+        if (stroke) {
+          stroke.style.width = '170px';
+          stroke.style.marginBottom = '26px';
+          stroke.style.margin = '';
+        }
+
+        // Show nav-link text
+        linkTexts.forEach(span => {
+          span.style.display = 'inline';
+          span.style.opacity = '1';
+        });
+
+        // Reset nav-link styles
+        navLinks.forEach(link => {
+          link.style.justifyContent = '';
+          link.style.padding = '12px 16px';
+          link.style.background = '';
+        });
+      }
+    }
+
+    // Check viewport width on load and resize
+    window.addEventListener('load', checkViewportWidth);
+    window.addEventListener('resize', checkViewportWidth);
+
+
     function toggleFilterDropdown() {
       const dropdown = document.getElementById("filtersDropdown");
       const chevronIcon = document.querySelector(".filters-box i.fa-chevron-down");
