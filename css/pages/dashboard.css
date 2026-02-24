@@ -1,0 +1,252 @@
+/* Dashboard Specific Styles */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--primary-bg);
+    background-image: url('../img/internal_bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 220px;
+    background: var(--secondary-bg);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    transition: width 0.3s ease;
+}
+
+.sidebar .logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.sidebar .logo span {
+    color: #FFD700;
+}
+
+.sidebar .nav-link {
+    color: var(--text-primary);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 8px;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background: #1A1F37;
+}
+
+.sidebar .nav-link img {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.sidebar .nav-text {
+    font-size: 14px;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 220px;
+    transition: margin-left 0.3s;
+}
+
+/* Topbar Styles */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Card Styles */
+.card-custom {
+    background: var(--card-bg);
+    backdrop-filter: blur(5px) saturate(180%);
+    -webkit-backdrop-filter: blur(5px) saturate(180%);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+}
+
+.card-custom h6 {
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.card-custom h4 {
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+.card-custom .text-success {
+    color: #01B574;
+}
+
+.card-custom .text-danger {
+    color: #E31A1A;
+}
+
+.cardIcons {
+    padding: 11px;
+    background: var(--accent-color);
+    border-radius: 12px;
+}
+
+/* Chart Container Styles */
+.chart-container {
+    background: var(--card-bg);
+    backdrop-filter: blur(5px) saturate(180%);
+    -webkit-backdrop-filter: blur(5px) saturate(180%);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Duration Filters */
+.duration-filters {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #292e359e;
+    padding: 12px;
+    border-radius: 30px;
+    flex-wrap: wrap;
+}
+
+.duration-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff7a;
+    font-size: 14px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.duration-btn.active {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Search and Sign In Styles */
+.search-wrapper {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-input {
+    padding: 8px 12px;
+    padding-left: 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: #172335;
+    color: var(--text-secondary);
+    width: 100%;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    color: var(--text-secondary);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 80px;
+    }
+    
+    .sidebar .nav-text {
+        display: none;
+    }
+    
+    .main-content {
+        margin-left: 80px;
+    }
+    
+    .card-custom h4 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: -80px;
+        top: 0;
+        bottom: 0;
+        z-index: 1000;
+    }
+    
+    .sidebar.show {
+        left: 0;
+    }
+    
+    .main-content {
+        margin-left: 0;
+    }
+    
+    .topbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-wrapper {
+        width: 100%;
+    }
+    
+    .duration-filters {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-custom {
+        padding: 15px;
+    }
+    
+    .card-custom h4 {
+        font-size: 18px;
+    }
+    
+    .chart-container {
+        padding: 15px;
+    }
+    
+    .duration-filters {
+        padding: 8px;
+    }
+    
+    .duration-btn {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+} 

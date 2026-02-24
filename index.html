@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Page</title>
+    <title>Login - DarkDrive</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css"/>
@@ -21,12 +21,12 @@
                 <form>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="abcd@gmail.com">
+                        <input type="email" id="email" placeholder="abcd@gmail.com" required>
                     </div>
                     <div class="form-group password-wrapper">
                         <label for="password">Password</label>
                         <div class="password-wrapper">
-                            <input type="password" id="password" placeholder="Password">
+                            <input type="password" id="password" placeholder="Password" required>
                             <span class="toggle-password" id="togglePassword">
                                 <i class="fa-solid fa-eye-slash"></i>
                             </span>
@@ -36,7 +36,7 @@
                     <br><br>
                     <button class="btn-login">Login</button>
                     <div class="signup">
-                        Don’t have Account?<a href="#">Sign Up</a>
+                        Don't have an account? <a href="signup.html">Sign Up</a>
                     </div>
                 </form>
             </div>

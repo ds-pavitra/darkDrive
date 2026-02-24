@@ -221,6 +221,7 @@ input[type="password"] {
   border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+
 .logo {
   display: flex;
   flex-direction: column;
@@ -667,21 +668,16 @@ input::placeholder {
 
 
 
+/* Existing Sidebar Styles (Desktop First) */
 .sidebar {
   width: 220px;
   height: 100%;
-  /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(20, 20, 30, 0.9));
-  backdrop-filter: blur(10px);
-  border-radius: 12px; */
   color: #fff;
-  background: #07101F;
   background: linear-gradient(100deg, rgba(7, 16, 31, 1) 0%, rgba(7, 16, 31, 0) 100%);
   backdrop-filter: blur(5px) saturate(180%);
   -webkit-backdrop-filter: blur(5px) saturate(180%);
   border-radius: 12px;
   border: 1px solid #2A5061;
-  /* box-shadow: 0 0 60px rgba(0, 191, 255, 0.6); */
-  /* neon outer glow */
   overflow: hidden;
   position: fixed;
   top: 10px;
@@ -689,9 +685,61 @@ input::placeholder {
   bottom: 10px;
   z-index: 1000;
   height: calc(100% - 20px);
-  transition: border-radius .3s;
+  transition: transform 0.3s ease-in-out, border-radius 0.3s;
 }
 
+/* Toggle Class for Collapsed State (Mobile) */
+.sidebar-collapsed {
+  /* transform: translateX(-140px); */
+  width: 80px;
+}
+
+
+/* Collapsed Sidebar Behavior */
+.sidebar.sidebar-collapsed {
+  width: 80px;
+}
+
+/* Hide logo when collapsed */
+.sidebar.sidebar-collapsed .logo {
+  display: none;
+}
+
+/* Shrink stroke line */
+.sidebar.sidebar-collapsed .stroke {
+  width: 40px;
+  margin: 10px auto;
+}
+
+/* Hide nav-link text */
+.sidebar.sidebar-collapsed .nav-link {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.sidebar.sidebar-collapsed .nav-link span {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.sidebar .nav-link span {
+  transition: opacity 0.2s ease-in-out;
+}
+
+
+
+.main-content-collapsed {
+  margin: 0px 24px 40px 120px !important;
+  transition: margin-left 0.3s;
+}
+
+/* Show sidebar again when active */
+.sidebar.show {
+  transform: translateX(0);
+}
+
+/* Logo & Toggle Button */
 .logo {
   height: 30px;
   object-fit: contain;
@@ -703,13 +751,15 @@ input::placeholder {
   background: #1A1F37;
   border-radius: 12px;
   border: none;
+  cursor: pointer;
+  z-index: 1100;
 }
 
+/* Sidebar Navigation Links */
 .nav-link {
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   padding: 12px 16px;
-  /* border-radius: 10px; */
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
@@ -774,7 +824,6 @@ input::placeholder {
   padding: 11px;
   background: #19ABEE;
   border-radius: 12px;
-  /* filter: brightness(0) invert(1); */
 }
 
 .nav-link.active {
@@ -782,7 +831,6 @@ input::placeholder {
   color: #fff;
   font-weight: 600;
   text-decoration: none;
-  /* box-shadow: inset 0 0 8px rgba(0, 191, 255, 0.3); */
 }
 
 .nav-link.active img {
@@ -806,8 +854,11 @@ input::placeholder {
 
 .main-content {
   margin: 0px 24px 40px 230px;
-  transition: margin-left .3s;
+  transition: margin-left 0.3s;
 }
+
+
+
 
 
 
@@ -2066,4 +2117,129 @@ input:checked+.slider:before {
   .dashboard-container {
     height: auto;
   }
+}
+
+/* Responsive styles for login and signup pages */
+@media (max-width: 1024px) {
+    .container {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .left-wrapper {
+        width: 50%;
+    }
+
+    .left-panel {
+        padding: 30px;
+    }
+
+    .left-panel h1 {
+        font-size: 20px;
+        margin: 20px 0 8px;
+    }
+
+    .left-panel p {
+        font-size: 13px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .left-wrapper {
+        width: 100%;
+    }
+
+    .right-panel {
+        display: none;
+    }
+
+    .left-panel {
+        padding: 25px;
+        max-width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .btn-login,
+    .btn-signup {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .forgot-password {
+        font-size: 13px;
+    }
+
+    .signup,
+    .login-link {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .left-panel {
+        padding: 20px;
+    }
+
+    .left-panel h1 {
+        font-size: 18px;
+        margin: 15px 0 5px;
+    }
+
+    .left-panel p {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    input[type="email"],
+    input[type="text"],
+    input[type="password"] {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .checkbox-group {
+        margin: 12px 0;
+    }
+
+    .checkbox-text {
+        font-size: 12px;
+    }
+}
+
+/* Landscape mode for mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+    .container {
+        padding: 10px;
+    }
+
+    .left-panel {
+        padding: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .btn-login,
+    .btn-signup {
+        padding: 8px;
+    }
 }
