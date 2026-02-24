@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Verification Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body class="forgot-body">
+    <div class="container forgot-container">
+        <div class="left-wrapper">
+            <div class="left-panel">
+                <div class="logo"><img src="./img/protexcoLogo.png" alt="protexcoLogo"></div>
+                <!-- <div class="tagline">DEFENDERS OF THE DIGITAL FRONTIER</div> -->
+                <h1>Enter Verification Code</h1>
+                <p>We’ve sent a 6-digit code to your email</p>
+                <form>
+                    <div class="otp-input-wrapper">
+                        <input type="text" maxlength="1" class="otp-input" />
+                        <input type="text" maxlength="1" class="otp-input" />
+                        <input type="text" maxlength="1" class="otp-input" />
+                        <input type="text" maxlength="1" class="otp-input" />
+                        <input type="text" maxlength="1" class="otp-input" />
+                        <input type="text" maxlength="1" class="otp-input" />
+                    </div>
+
+                    <br>
+                    <button class="btn-login">Verify</button>
+                    <div class="signup">
+                        Didn’t receive the code? <a href="#">Go Back</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="right-panel">
+            <!-- <img src="/mnt/data/image.png" alt="Login Security Shield" /> -->
+        </div>
+    </div>
+    <script>
+        const inputs = document.querySelectorAll('.otp-input');
+    
+        // Handle typing and backspace
+        inputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                const value = e.target.value;
+    
+                // Handle full 6-digit paste
+                if (value.length === inputs.length) {
+                    value.split('').forEach((char, i) => {
+                        inputs[i].value = char;
+                    });
+                    inputs[inputs.length - 1].focus();
+                    return;
+                }
+    
+                // Auto move to next input
+                if (value.length === 1 && index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            });
+    
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && input.value === '' && index > 0) {
+                    inputs[index - 1].focus();
+                }
+            });
+        });
+    
+        // Handle paste on the first input
+        inputs[0].addEventListener('paste', (e) => {
+            const pasteData = e.clipboardData.getData('text').trim();
+            if (/^\d{6}$/.test(pasteData)) {
+                pasteData.split('').forEach((char, i) => {
+                    inputs[i].value = char;
+                });
+                inputs[inputs.length - 1].focus();
+                e.preventDefault();
+            }
+        });
+    </script>
+    
+
+</body>
+
+</html>

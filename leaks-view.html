@@ -61,7 +61,7 @@
       <!-- Topbar -->
       <div class="topbar d-flex justify-content-between align-items-center px-4 pb-2">
         <h4 class="m-0">Leaks Database</h4>
-        <div class="d-flex align-items-center gap-3">
+        <div class="d-flex align-items-center gap-3 leaksDiv">
           <button class="export-btn">
             <i class="fa-solid fa-download me-1"></i> Export
           </button>
@@ -72,81 +72,83 @@
         </div>
       </div>
 
-      <div class="container-fluid py-4 px-4" style="height: 100vh;">
+      <div class="container-fluid biMainContainer" style="height: 100vh;">
         <div class="table-container" id="LeaksTable" style="display: block;">
-          <table>
-            <thead>
-              <tr>
-                <th class="d-flex justify-content-around align-items-center">
-                  <div>
-                    <img src="img/leaksHamburgerIcon.png" alt="">
-                  </div>
-                  <div>
-                    <h5 class="mb-0">Name of file</h5>
-                  </div>
-                  <div class="zoom-controls d-flex align-items-center gap-2">
-                    <button onclick="zoomIn()" class="zoom-btn">+</button>
-                    <span id="zoomValue">100%</span>
-                    <button onclick="zoomOut()" class="zoom-btn">−</button>
-                  </div>
-                  <div class="d-flex align-items-center col-md-6">
-                    <div class="search-wrapper position-relative">
-                      <input class="search-input ps-5" type="text" placeholder="Search here...">
-                      <img src="img/searchicon.png" class="search-icon position-absolute" alt="Search">
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th class="d-flex justify-content-around align-items-center">
+                    <div>
+                      <img src="img/leaksHamburgerIcon.png" alt="">
                     </div>
                     <div>
-                      <button class="export-btn" style="margin-left: 10px;">
-                        Search
-                      </button>
+                      <h5 class="mb-0">Name of file</h5>
                     </div>
-                  </div>
-                  <div>
-                    <img src="img/cross-btn.png" alt="close">
-                  </div>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="d-flex">
-                  <div id="zoomTarget" class="zoom-target">
-                    <!-- Your table or content goes here -->
-                    <p>
-                      https://m.facebook.com/reg/::n7zRwn:m8Ht5TiE
-                      https://sso.becas-santander.com/auth/realms/Becas/login-actions/registration::v!7asuLYKBYJRXP
-                      javascript:void(0): jhonataszrc@gmail.com:r2mX7. !6sbvYKuf
-                      https://www.udemy.com/join/login-popup/:jhonataszrc@gmail.com: Jhon@261019
-                      https://accounts.google.com/:cienciatecnologiaoficial:JhfuA7! spAHC: mr
-                      https://app.internetbanking.caixa.gov.br/:8:1
-                      https://privacy.com.br/Checkout/Morenagulosa23/a425ba2b-e232-4bb5-8db2-8fbdecbb3c03::
-                      TcXebVw_5sng29D https://minhaconta.ongame.net/entrar/: jhonataszrc: Jhon@261019
-                      https://sso.hotmart.com/login:jhonataszrc@gmail.com: Jhon@261019
-                      https://cadastro.pravaler.com.br/:17094478771: Jhon@261019
-                      https://raiadrogasil.workplace.com/login/submit/:beatrizduarte:Be@070220
-                      https://www.estudonauta.com/finalizar-compra/:Jhonatas:yDdijF!CJ_f9veb
-                      https://explicae.com.br/app/entrar: francis_salomao@hotmail.com:F1234567
-                      https://saladosaber.com.br/auth:jhonataszrc@gmail.com:Jhon@261019
-                      https://br.z8games.com/login.html:hayakshi:beatrizteam
-                      https://estudanteead.com/saberj/metodo/processa.php:13790:19495
-                      https://universidaderd.com.br/:Beatriz.274813:Bia070220
-                      https://ebookcalculedecabeca-nzwvzp.club.hotmart.com/login:jhonataszrcoutinho@gmail.com:
-                      Jhon@261019
-                      https://rdonline.rd.com.br/portalgcs/: Beatriz.274813: Beatriz0007*
-                      https://novoportal.pravaler.com.br/:17094478771: Jhon@261019
-                      https://sso.becas-santander.com/auth/realms/Becas/login-actions/registration:
-                      jhonataszrc@gmail.com:
-                      Jhon@261019 https://www.estudonauta.com/finalizar-compra/::9: a27DgTmGT2Wq:
-                      https://voluntariosrd.v2v.net/pt-BR/enter/signup: Itaperuna:jhBYij9AuWuey_N
-                      https://id.cisco.com/user/welcome/login/internal:jhonataszrc@gmail.com:Be@triz26101920
-                      https://www.explicae.com.br/app/entrar:francis_salomao@hotmail.com:F1234567 httnc://cac hncoriino
-                      com/ac/Authentication/Riannint anchor798 · ihonatac2610
-                    </p>
-                  </div>
-                </td>
-              </tr>
-
-            </tbody>
-          </table>
+                    <div class="zoom-controls d-flex align-items-center gap-2">
+                      <button onclick="zoomIn()" class="zoom-btn">+</button>
+                      <span id="zoomValue">100%</span>
+                      <button onclick="zoomOut()" class="zoom-btn">−</button>
+                    </div>
+                    <div class="d-flex align-items-center col-md-6">
+                      <div class="search-wrapper position-relative">
+                        <input class="search-input ps-5" type="text" placeholder="Search here...">
+                        <img src="img/searchicon.png" class="search-icon position-absolute" alt="Search">
+                      </div>
+                      <div>
+                        <button class="export-btn" style="margin-left: 10px;">
+                          Search
+                        </button>
+                      </div>
+                    </div>
+                    <div>
+                      <img src="img/cross-btn.png" alt="close">
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="d-flex">
+                    <div id="zoomTarget" class="zoom-target">
+                      <!-- Your table or content goes here -->
+                      <p>
+                        https://m.facebook.com/reg/::n7zRwn:m8Ht5TiE
+                        https://sso.becas-santander.com/auth/realms/Becas/login-actions/registration::v!7asuLYKBYJRXP
+                        javascript:void(0): jhonataszrc@gmail.com:r2mX7. !6sbvYKuf
+                        https://www.udemy.com/join/login-popup/:jhonataszrc@gmail.com: Jhon@261019
+                        https://accounts.google.com/:cienciatecnologiaoficial:JhfuA7! spAHC: mr
+                        https://app.internetbanking.caixa.gov.br/:8:1
+                        https://privacy.com.br/Checkout/Morenagulosa23/a425ba2b-e232-4bb5-8db2-8fbdecbb3c03::
+                        TcXebVw_5sng29D https://minhaconta.ongame.net/entrar/: jhonataszrc: Jhon@261019
+                        https://sso.hotmart.com/login:jhonataszrc@gmail.com: Jhon@261019
+                        https://cadastro.pravaler.com.br/:17094478771: Jhon@261019
+                        https://raiadrogasil.workplace.com/login/submit/:beatrizduarte:Be@070220
+                        https://www.estudonauta.com/finalizar-compra/:Jhonatas:yDdijF!CJ_f9veb
+                        https://explicae.com.br/app/entrar: francis_salomao@hotmail.com:F1234567
+                        https://saladosaber.com.br/auth:jhonataszrc@gmail.com:Jhon@261019
+                        https://br.z8games.com/login.html:hayakshi:beatrizteam
+                        https://estudanteead.com/saberj/metodo/processa.php:13790:19495
+                        https://universidaderd.com.br/:Beatriz.274813:Bia070220
+                        https://ebookcalculedecabeca-nzwvzp.club.hotmart.com/login:jhonataszrcoutinho@gmail.com:
+                        Jhon@261019
+                        https://rdonline.rd.com.br/portalgcs/: Beatriz.274813: Beatriz0007*
+                        https://novoportal.pravaler.com.br/:17094478771: Jhon@261019
+                        https://sso.becas-santander.com/auth/realms/Becas/login-actions/registration:
+                        jhonataszrc@gmail.com:
+                        Jhon@261019 https://www.estudonauta.com/finalizar-compra/::9: a27DgTmGT2Wq:
+                        https://voluntariosrd.v2v.net/pt-BR/enter/signup: Itaperuna:jhBYij9AuWuey_N
+                        https://id.cisco.com/user/welcome/login/internal:jhonataszrc@gmail.com:Be@triz26101920
+                        https://www.explicae.com.br/app/entrar:francis_salomao@hotmail.com:F1234567 httnc://cac hncoriino
+                        com/ac/Authentication/Riannint anchor798 · ihonatac2610
+                      </p>
+                    </div>
+                  </td>
+                </tr>
+  
+              </tbody>
+            </table>
+          </div>
         </div>
 
       </div>
@@ -158,28 +160,102 @@
 
 
   <script>
-    let zoomLevel = 1;
 
-    function updateZoom() {
-      document.getElementById('zoomTarget').style.transform = `scale(${zoomLevel})`;
-      document.getElementById('zoomValue').textContent = `${Math.round(zoomLevel * 100)}%`;
-    }
+    function checkViewportWidth() {
+      const sidebar = document.querySelector('.sidebar');
+      const mainContent = document.querySelector('.main-content');
+      const logo = sidebar.querySelector('.logo');
+      const stroke = sidebar.querySelector('.stroke');
+      const navLinks = sidebar.querySelectorAll('.nav-link');
+      const linkTexts = sidebar.querySelectorAll('.nav-link span');
 
-    function zoomIn() {
-      if (zoomLevel < 2) {
-        zoomLevel += 0.1;
-        updateZoom();
+      if (window.innerWidth <= 768) { // 768px is a common breakpoint for tablets
+        sidebar.classList.add('sidebar-collapsed');
+        mainContent.classList.add('main-content-collapsed');
+
+        // Hide logo
+        if (logo) logo.style.display = 'none';
+
+        // Shrink stroke
+        if (stroke) {
+          stroke.style.width = '40px';
+          stroke.style.margin = '10px auto';
+        }
+
+        // Hide nav-link text
+        linkTexts.forEach(span => {
+          span.style.display = 'none';
+          span.style.opacity = '0';
+        });
+
+        // Center icon and remove padding
+        navLinks.forEach(link => {
+          link.style.justifyContent = 'center';
+          link.style.padding = '12px 0';
+          link.style.background = 'none';
+        });
+      } else {
+        sidebar.classList.remove('sidebar-collapsed');
+        mainContent.classList.remove('main-content-collapsed');
+
+        // Show logo
+        if (logo) logo.style.display = 'block';
+
+        // Expand stroke
+        if (stroke) {
+          stroke.style.width = '170px';
+          stroke.style.marginBottom = '26px';
+          stroke.style.margin = '';
+        }
+
+        // Show nav-link text
+        linkTexts.forEach(span => {
+          span.style.display = 'inline';
+          span.style.opacity = '1';
+        });
+
+        // Reset nav-link styles
+        navLinks.forEach(link => {
+          link.style.justifyContent = '';
+          link.style.padding = '12px 16px';
+          link.style.background = '';
+        });
       }
     }
 
-    function zoomOut() {
-      if (zoomLevel > 0.5) {
-        zoomLevel -= 0.1;
-        updateZoom();
-      }
-    }
+    // Check viewport width on load and resize
+    window.addEventListener('load', checkViewportWidth);
+    window.addEventListener('resize', checkViewportWidth);
 
+<<<<<<< HEAD
     updateZoom(); // initialize on load
+=======
+
+     let zoomLevel = 1;
+
+  function updateZoom() {
+    const zoomTarget = document.getElementById("zoomTarget");
+    const zoomValue = document.getElementById("zoomValue");
+
+    zoomTarget.style.transform = `scale(${zoomLevel})`;
+    zoomTarget.style.transformOrigin = "top left";
+    zoomValue.textContent = `${Math.round(zoomLevel * 100)}%`;
+  }
+
+  function zoomIn() {
+    zoomLevel += 0.1;
+    if (zoomLevel > 3) zoomLevel = 3;
+    updateZoom();
+  }
+
+  function zoomOut() {
+    zoomLevel -= 0.1;
+    if (zoomLevel < 0.3) zoomLevel = 0.3;
+    updateZoom();
+  }
+
+  window.addEventListener("DOMContentLoaded", updateZoom);
+>>>>>>> f5068f0e8b2f46ebac7fd840d48093623359f52a
 
     document.addEventListener("DOMContentLoaded", function () {
       const toggleButton = document.getElementById('menuBtn');
