@@ -2122,6 +2122,11 @@ input:checked+.slider:before {
   border-color: #333;
 }
 
+.zoom-target {
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
 
 
 

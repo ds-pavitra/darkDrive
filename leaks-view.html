@@ -228,28 +228,30 @@
     window.addEventListener('resize', checkViewportWidth);
 
 
-    let zoomLevel = 1;
+     let zoomLevel = 1;
 
-    function updateZoom() {
-      document.getElementById('zoomTarget').style.transform = `scale(${zoomLevel})`;
-      document.getElementById('zoomValue').textContent = `${Math.round(zoomLevel * 100)}%`;
-    }
+  function updateZoom() {
+    const zoomTarget = document.getElementById("zoomTarget");
+    const zoomValue = document.getElementById("zoomValue");
 
-    function zoomIn() {
-      if (zoomLevel < 2) {
-        zoomLevel += 0.1;
-        updateZoom();
-      }
-    }
+    zoomTarget.style.transform = `scale(${zoomLevel})`;
+    zoomTarget.style.transformOrigin = "top left";
+    zoomValue.textContent = `${Math.round(zoomLevel * 100)}%`;
+  }
 
-    function zoomOut() {
-      if (zoomLevel > 0.5) {
-        zoomLevel -= 0.1;
-        updateZoom();
-      }
-    }
+  function zoomIn() {
+    zoomLevel += 0.1;
+    if (zoomLevel > 3) zoomLevel = 3;
+    updateZoom();
+  }
 
-    updateZoom(); // initialize on load
+  function zoomOut() {
+    zoomLevel -= 0.1;
+    if (zoomLevel < 0.3) zoomLevel = 0.3;
+    updateZoom();
+  }
+
+  window.addEventListener("DOMContentLoaded", updateZoom);
 
     document.addEventListener("DOMContentLoaded", function () {
       const toggleButton = document.getElementById('menuBtn');
